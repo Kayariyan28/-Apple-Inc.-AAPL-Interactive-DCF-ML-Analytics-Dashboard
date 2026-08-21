@@ -22,12 +22,39 @@ const SURFACES = [
   { name: "Monte Carlo", copy: "Shock WACC, growth, margins. Paths, sensitivity, forecast, history, risk." },
 ] as const;
 
+const PRINCIPLES = [
+  {
+    name: "The object is the name",
+    copy: "A watchlist is a list. A desk is one company. The ticker strip is the primary control — everything else rewrites.",
+  },
+  {
+    name: "Copy is a design material",
+    copy: "Headlines, mix events, and Grok starters belong to the focused name. Apple copy on an NVIDIA chart is a defect.",
+  },
+  {
+    name: "The print is a document",
+    copy: "FY 2018–2025 as a board you can page. Events sit on the year they happened. Type, not a tooltip maze.",
+  },
+  {
+    name: "Color is reserved for the tape",
+    copy: "Up and down are the only moral colors. The rest is black, hairline, and type. Accent blue is a pointer, not a wash.",
+  },
+  {
+    name: "Assumptions stay in reach",
+    copy: "WACC, growth, and margins live in one sheet. Every chart re-prices when a slider moves. No apply button.",
+  },
+  {
+    name: "Terminal is a surface",
+    copy: "If the engines are honest, they should be callable. Same type, same books — not a debug console bolted on.",
+  },
+] as const;
+
 function About() {
   return (
     <main>
       <section className="mx-auto max-w-7xl px-4 pb-8 pt-12 md:px-6 md:pt-16">
         <div className="stagger-in max-w-3xl">
-          <Kicker>About · K28 Design Lab</Kicker>
+          <Kicker>Product design · K28 Design Lab</Kicker>
           <h1 className="mt-4 font-serif text-4xl font-medium leading-tight tracking-tight md:text-6xl">
             A desk for the 10-K and the live tape.
           </h1>
@@ -91,6 +118,41 @@ function About() {
         </Panel>
 
         <Panel>
+          <Kicker>Product design</Kicker>
+          <h2 className="mt-3 font-serif text-3xl font-medium tracking-tight">Predesign before chrome.</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+            Finance products split in two: terminals that are hostile, consumer apps that are thin. Data Desk was
+            designed as a place you sit with a name — the 10-K as a document, the tape as a live object, the DCF as
+            arithmetic. These six decisions were locked before the first production layout.
+          </p>
+          <div className="mt-8 grid gap-8 md:grid-cols-2">
+            {PRINCIPLES.map((s) => (
+              <div key={s.name}>
+                <p className="text-sm font-medium">{s.name}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.copy}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 grid gap-3 sm:grid-cols-3">
+            <div className="rounded-2xl bg-secondary/60 p-4">
+              <p className="text-xs uppercase tracking-widest text-muted-foreground">Display</p>
+              <p className="mt-2 font-serif text-xl font-medium">Newsreader</p>
+              <p className="mt-1 text-xs text-muted-foreground">The argument</p>
+            </div>
+            <div className="rounded-2xl bg-secondary/60 p-4">
+              <p className="text-xs uppercase tracking-widest text-muted-foreground">UI</p>
+              <p className="mt-2 font-serif text-xl font-medium">Outfit</p>
+              <p className="mt-1 text-xs text-muted-foreground">The instrument</p>
+            </div>
+            <div className="rounded-2xl bg-secondary/60 p-4">
+              <p className="text-xs uppercase tracking-widest text-muted-foreground">Tape</p>
+              <p className="mt-2 font-serif text-xl font-medium">Up / down only</p>
+              <p className="mt-1 text-xs text-muted-foreground">Green and red, tape only</p>
+            </div>
+          </div>
+        </Panel>
+
+        <Panel>
           <Kicker>Surfaces</Kicker>
           <h2 className="mt-3 font-serif text-3xl font-medium tracking-tight">One set of books. Every lens.</h2>
           <div className="mt-8 grid gap-8 md:grid-cols-2">
@@ -135,8 +197,8 @@ function About() {
               <h2 className="font-serif text-3xl font-medium tracking-tight">Karan Chandra Dey</h2>
               <p className="mt-2 text-sm text-muted-foreground">K28 Design Lab · San Francisco</p>
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                Independent researcher and product builder. Data Desk is the successor to a single-name Apple DCF
-                notebook: same obsession with the print, now a desk that can change names without changing its mind.
+                Product designer and builder. Data Desk is a UI/UX exploration made into a working desk: the
+                successor to a single-name Apple DCF notebook, designed so a name change is a rewrite, not a reskin.
               </p>
             </div>
             <div className="flex flex-col justify-end gap-2 text-sm">
